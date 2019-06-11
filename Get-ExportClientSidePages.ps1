@@ -26,7 +26,7 @@ function Get-ExportClientSidePages {
 
     #Add every single page to the target template
     foreach ($items in $listItems) {
-        if ($listItems.FieldValues["ContentTypeId"].StringValue.StartsWith("0x0101009D1CB255DA76424F860D91F20E6C4118")) {
+        if ($items.FieldValues["ContentTypeId"].StringValue.StartsWith("0x0101009D1CB255DA76424F860D91F20E6C4118")) {
         
             if ($Web.WelcomePage.EndsWith($items.FieldValues["FileLeafRef"])){
                 #Welcome page already included from getting ProvisioningTemplate PageContents.

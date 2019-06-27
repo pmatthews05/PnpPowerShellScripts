@@ -13,7 +13,7 @@ param(
 
 $InformationPreference = 'continue'
 
-$siteScripts = Get-PnPSiteScript | where { -not ($IgnoreScripts -contains $_.Title) }
+$siteScripts = Get-PnPSiteScript | Where-Object { -not ($IgnoreScripts -contains $_.Title) }
 if ($siteScripts.Count -eq 0) { break }
 $siteScripts | Format-Table Title, Id
 Read-Host -Prompt "Press Enter to start deleting (CTRL + C to exit)"
